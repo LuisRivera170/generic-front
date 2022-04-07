@@ -1,5 +1,7 @@
-@import '~@nebular/theme/styles/theming';
-@import '~@nebular/theme/styles/themes/default';
+
+@import '@nebular/theme/styles/theming';
+@import '@nebular/theme/styles/themes/default';
+@import '@nebular/theme/styles/themes/dark';
 
 $nb-themes: nb-register-theme((
 
@@ -16,3 +18,13 @@ $nb-themes: nb-register-theme((
   // color-primary-900: #091c7a,
 
 ), default, default);
+
+$nb-themes: nb-register-theme(
+  (
+    // some styles we changed
+    // text-basic-color: color-basic-800,
+    // text-disabled-color: color-basic-600
+  ),
+  dark,
+  dark
+);

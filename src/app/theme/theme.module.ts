@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbButtonModule, NbCardModule, NbIconModule, NbLayoutModule } from '@nebular/theme';
+import { NbAlertModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbIconModule, NbInputModule, NbLayoutModule } from '@nebular/theme';
 import { HeaderComponent } from './components/header/header.component';
 import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -14,8 +14,11 @@ const NB_MODULES = [
 ];
 
 const NB_MODULES_EXPORTS = [
+  NbAlertModule,
+  NbButtonModule,
   NbCardModule,
-  NbButtonModule
+  NbCheckboxModule,
+  NbInputModule
 ];
 
 const COMPONENTS = [

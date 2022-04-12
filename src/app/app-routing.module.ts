@@ -4,6 +4,10 @@ import { NotFoundComponent } from './web/components/not-found/not-found.componen
 
 const routes: Routes = [
   {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(module => module.AuthModule)
+  },
+  {
     path: '',
     loadChildren: () => import('./web/web.module').then(module => module.WebModule)
   },

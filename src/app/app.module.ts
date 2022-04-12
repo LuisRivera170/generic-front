@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbMenuModule, NbThemeModule } from '@nebular/theme';
+import { HttpClientModule } from '@angular/common/http';
+import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
 
 @NgModule({
   declarations: [
@@ -12,8 +14,19 @@ import { NbMenuModule, NbThemeModule } from '@nebular/theme';
   ],
   imports: [
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     BrowserModule,
+    NbAuthModule.forRoot({
+      strategies: [
+        NbDummyAuthStrategy.setup(
+          {
+            name: 'email'
+          }
+        )
+      ],
+      forms: {}
+    }),
     NbMenuModule.forRoot(),
     NbThemeModule.forRoot({ name: 'default' })
   ],
